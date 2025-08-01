@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<img src=""C:\Users\dg127\iCloudPhotos\Photos\IMG_2668.PNG"" alt="welcome to my world" class="profile-pic">
+
+  <meta charset="UTF-8">
+  <title>d33p4k's Link Hub</title>
+  <style>
+    :root {
+      --bg-light: #f4f4f4;
+      --bg-dark: #1e1e1e;
+      --text-light: #333;
+      --text-dark: #f4f4f4;
+      --button-color: #0077b5;
+      --button-hover: #005582;
+    }
+ body {
+  font-family: 'Poppins', sans-serif;
+}
+
+   .profile-pic {
+  width: 120px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+ 
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 50px;
+      text-align: center;
+      color: var(--text-light);
+      transition: background-color 0.5s, color 0.5s;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .dark-mode {
+      background-color: var(--bg-dark);
+      color: var(--text-dark);
+    }
+
+    .stars {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: black;
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    .star {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: white;
+      animation: twinkle 2s infinite ease-in-out;
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.2; }
+      50% { opacity: 1; }
+    }
+
+    .profile-pic {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+
+    h1 {
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+
+    p.bio {
+      font-size: 1em;
+      margin-bottom: 30px;
+    }
+
+    .link-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin: 10px auto;
+      padding: 12px 24px;
+      background-color: var(--button-color);
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      width: 240px;
+      font-weight: bold;
+      transition: transform 0.3s, background-color 0.3s;
+    }
+
+    .link-button:hover {
+      background-color: var(--button-hover);
+      transform: scale(1.05);
+    }
+
+    .toggle-btn {
+      margin-top: 20px;
+      padding: 8px 16px;
+      background-color: #444;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="stars" id="stars"></div>
+
+  <img src="your-profile.jpg" alt="Profile Picture" class="profile-pic">
+  <h1>Welcome to d33p4k's Link Hub 🚀</h1>
+  <p class="bio">Tech enthusiast | Meme lover | Always curious</p>
+
+  <a class="link-button" href="https://instagram.com/yourusername">📸 Instagram</a>
+  <a class="link-button" href="https://github.com/yourusername">💻 GitHub</a>
+  <a class="link-button" href="https://snapchat.com/add/yourusername">👻 Snapchat</a>
+  <a class="link-button" href="https://linkedin.com/in/yourusername">🔗 LinkedIn</a>
+  <a class="link-button" href="https://facebook.com/yourusername">📘 Facebook</a>
+  <a class="link-button" href="https://ngl.link/yourusername">💬 NGL</a>
+
+  <button class="toggle-btn" onclick="toggleDarkMode()">🌙 Toggle Dark Mode</button>
+
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+    }
+
+    // Generate stars
+    const starsContainer = document.getElementById('stars');
+    for (let i = 0; i < 100; i++) {
+      const star = document.createElement('div');
+      star.className = 'star';
+      star.style.top = Math.random() * 100 + '%';
+      star.style.left = Math.random() * 100 + '%';
+      star.style.animationDuration = (Math.random() * 2 + 1) + 's';
+      starsContainer.appendChild(star);
+    }
+  </script>
+</body>
+</html>
