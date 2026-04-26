@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-<img src=""C:\Users\dg127\iCloudPhotos\Photos\IMG_2668.PNG"" alt="welcome to my world" class="profile-pic">
+
 
   <meta charset="UTF-8">
-  <title>d33p4k's Link Hub</title>
+  <title> Deepak Link Hub</title>
   <style>
     :root {
       --bg-light: #f4f4f4;
@@ -35,35 +35,83 @@
       transition: background-color 0.5s, color 0.5s;
       overflow: hidden;
       position: relative;
+      background-color: rgba(244, 244, 244, 0.9);
     }
 
     .dark-mode {
-      background-color: var(--bg-dark);
+      background-color: rgba(30, 30, 30, 0.9);
       color: var(--text-dark);
     }
 
-    .stars {
+    .bg-image {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: black;
-      z-index: -1;
-      overflow: hidden;
+      background-image: url('https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+      background-size: cover;
+      background-position: center;
+      z-index: -2;
+      filter: blur(2px) brightness(0.6);
+      animation: bg-effect 5s infinite alternate;
     }
 
-    .star {
+    .dark-mode .bg-image {
+      filter: blur(3px) brightness(0.4);
+    }
+
+    @keyframes bg-effect {
+      0% { filter: blur(2px) brightness(0.6) saturate(1); }
+      100% { filter: blur(3px) brightness(0.8) saturate(1.2); }
+    }
+
+    .bg-text {
       position: absolute;
-      width: 2px;
-      height: 2px;
-      background: white;
-      animation: twinkle 2s infinite ease-in-out;
+      font-size: 4em;
+      opacity: 0.03;
+      color: var(--text-light);
+      z-index: -1;
+      pointer-events: none;
+      animation: float 10s infinite linear;
+      text-shadow: 0 0 20px rgba(0,0,0,0.3);
     }
 
-    @keyframes twinkle {
-      0%, 100% { opacity: 0.2; }
-      50% { opacity: 1; }
+    .dark-mode .bg-text {
+      color: var(--text-dark);
+      text-shadow: 0 0 20px rgba(255,255,255,0.3);
+    }
+
+    .bg-coder {
+      top: 10%;
+      left: 10%;
+      animation-delay: 0s;
+    }
+
+    .bg-developer {
+      top: 20%;
+      right: 10%;
+      animation-delay: 5s;
+    }
+
+    .bg-ai {
+      bottom: 20%;
+      left: 20%;
+      animation-delay: 10s;
+    }
+
+    .bg-tech {
+      bottom: 10%;
+      right: 20%;
+      animation-delay: 15s;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(100vh) translateX(0) rotate(0deg); }
+      25% { transform: translateY(50vh) translateX(50vw) rotate(90deg); }
+      50% { transform: translateY(0) translateX(100vw) rotate(180deg); }
+      75% { transform: translateY(-50vh) translateX(50vw) rotate(270deg); }
+      100% { transform: translateY(-100vh) translateX(0) rotate(360deg); }
     }
 
     .profile-pic {
@@ -78,11 +126,13 @@
     h1 {
       font-size: 2em;
       margin-bottom: 10px;
+      color: yellow;
     }
 
     p.bio {
       font-size: 1em;
       margin-bottom: 30px;
+      color: white;
     }
 
     .link-button {
@@ -118,35 +168,35 @@
   </style>
 </head>
 <body>
-  <div class="stars" id="stars"></div>
+  <div class="bg-image"></div>
+  <div class="bg-text bg-coder">Coder</div>
+  <div class="bg-text bg-developer">Developer</div>
+  <div class="bg-text bg-ai">AI</div>
+  <div class="bg-text bg-tech">Tech</div>
 
-  <img src="your-profile.jpg" alt="Profile Picture" class="profile-pic">
-  <h1>Welcome to d33p4k's Link Hub 🚀</h1>
-  <p class="bio">Tech enthusiast | Meme lover | Always curious</p>
 
-  <a class="link-button" href="https://instagram.com/yourusername">📸 Instagram</a>
+  <h1>Welcome to Deepak Link Hub 🚀</h1>
+  <p class="bio">Tech enthusiast | coder | AI enthusiast</p>
+
+  <a class="link-button" href="https://codeforces.com/profile/Deepak404nf">🏆 CodeForces</a>
   <a class="link-button" href="https://github.com/yourusername">💻 GitHub</a>
-  <a class="link-button" href="https://snapchat.com/add/yourusername">👻 Snapchat</a>
+  <a class="link-button" href="https://leetcode.com/u/d33pAk1106/">🧠 LeetCode</a>
   <a class="link-button" href="https://linkedin.com/in/yourusername">🔗 LinkedIn</a>
   <a class="link-button" href="https://facebook.com/yourusername">📘 Facebook</a>
-  <a class="link-button" href="https://ngl.link/yourusername">💬 NGL</a>
+ 
 
   <button class="toggle-btn" onclick="toggleDarkMode()">🌙 Toggle Dark Mode</button>
 
   <script>
     function toggleDarkMode() {
       document.body.classList.toggle('dark-mode');
-    }
-
-    // Generate stars
-    const starsContainer = document.getElementById('stars');
-    for (let i = 0; i < 100; i++) {
-      const star = document.createElement('div');
-      star.className = 'star';
-      star.style.top = Math.random() * 100 + '%';
-      star.style.left = Math.random() * 100 + '%';
-      star.style.animationDuration = (Math.random() * 2 + 1) + 's';
-      starsContainer.appendChild(star);
+      const isDark = document.body.classList.contains('dark-mode');
+      const bgTexts = document.querySelectorAll('.bg-text');
+      const bgImage = document.querySelector('.bg-image');
+      const textDuration = isDark ? '5s' : '10s';
+      const imageDuration = isDark ? '2.5s' : '5s';
+      bgTexts.forEach(el => el.style.animationDuration = textDuration);
+      if (bgImage) bgImage.style.animationDuration = imageDuration;
     }
   </script>
 </body>
